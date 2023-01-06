@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .upper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap:20px
+        }
+        h1{
+            color: #008000;
+            font-size: 100px;
+        }
+        p{
+            font-size: 32px;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+        }
+        img{
+            height: 200px;
+            width: 300px;
+        }
+        #lower{
+            /* border: solid; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin:10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="upper">
+        <h1>Geekster</h1>
+        <p>Click on the button to add image element</p>
+        <button onclick="clickme()">click here</button>
+    </div>
+</body>
+
+<script> 
+     div12=document.createElement("div")
+     cla=document.createAttribute("id")
+     cla.value="lower"
+     div12.setAttributeNode(cla);
+     document.body.appendChild(div12)
+    //  var clear = document.getElementById("lower")
+    function clickme(){
+        // clear.innerHTML=" "
+        var d=document.createElement("h3")
+        var att=document.createAttribute("id")
+        var img=document.createElement("img")
+        var src=document.createAttribute("src")
+        src.value="logo.png"
+        att.value="text"
+        img.setAttributeNode(src)
+        d.setAttributeNode(att)
+        const node = document.createTextNode("Image Element Added");
+        d.appendChild(node);
+        // console.log(d)
+        di=document.getElementById("lower")
+        di.appendChild(d)
+        di.appendChild(img)
+
+    }
+</script>
+</html>
